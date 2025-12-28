@@ -426,9 +426,9 @@ body {
 
 .btn-secondary-outline:hover {/* Lines 839-843 omitted */}
 
-/* ================================
+/* ================================*/
    /* Lines 846-847 omitted */
-   ================================ */
+   /* ================================ */
 .cta-final {/* Lines 849-853 omitted */}
 
 .cta-final::before {/* Lines 856-864 omitted */}
@@ -463,16 +463,16 @@ body {
 
 .btn-secondary-outline:hover {/* Lines 970-975 omitted */}
 
-/* ================================
+/* ================================*/
    /* Lines 978-980 omitted */
 
 @media (max-width: 768px) {/* Lines 982-1026 omitted */}
 
 @media (max-width: 480px) {/* Lines 1029-1055 omitted */}
 
-/* ================================
+/* ================================*/
    /* Lines 1058-1059 omitted */
-   ================================ */
+   /* ================================ */
 .video-section {/* Lines 1061-1064 omitted */}
 
 .video-content {/* Lines 1067-1072 omitted */}
@@ -491,16 +491,13 @@ body {
 
 .video-container video:hover {/* Lines 1110-1113 omitted */}
 
-/* ================================
-   /* Lines 1116-1118 omitted */
+/* ================================ Lines 1116-1118 omitted */
 
 @media (max-width: 768px) {/* Lines 1120-1146 omitted */}
 
 @media (max-width: 480px) {/* Lines 1149-1164 omitted */}
 
-/* ================================
-   /* Lines 1167-1168 omitted */
-   ================================ */
+/* ================================ Lines 1167-1168 omitted */
 .footer {/* Lines 1170-1173 omitted */}
 
 .footer-content {/* Lines 1176-1182 omitted */}
@@ -523,9 +520,10 @@ body {
 
 .footer-bottom .brand-name {/* Lines 1232-1234 omitted */}
 
-/* ================================
-   /* Lines 1237-1238 omitted */
-   ================================ */
+/*==============================*/
+/* 1237-1238 omitted */
+/* ==============================*/
+
 .modal {/* Lines 1240-1250 omitted */}
 
 .modal-content {/* Lines 1253-1263 omitted */}
@@ -545,8 +543,8 @@ body {
 .close:focus {/* Lines 1302-1303 omitted */}
 
 /* ================================
-   /* Lines 1306-1307 omitted */
-   ================================ */
+   Lines 1306-1307 omitted
+================================ */
 .scroll-to-top {/* Lines 1309-1326 omitted */}
 
 .scroll-to-top.show {/* Lines 1329-1331 omitted */}
@@ -576,8 +574,8 @@ body {
 .success-icon {/* Lines 1410-1421 omitted */}
 
 /* ================================
-   /* Lines 1424-1425 omitted */
-   ================================ */
+    Lines 1424-1425 omitted 
+ ================================ */
 @keyframes fadeIn {/* Lines 1427-1429 omitted */}
 
 @keyframes fadeInUp {/* Lines 1432-1440 omitted */}
@@ -587,7 +585,8 @@ body {
 @keyframes scaleIn {/* Lines 1454-1460 omitted */}
 
 /* ================================
-   /* Lines 1463-1465 omitted */
+   Lines 1463-1465 omitted
+================================ */
 
 /* ANCHO MÍNIMO DE LA WEB - Evita que se rompa en pantallas muy pequeñas */
 body {/* Lines 1468-1469 omitted */}

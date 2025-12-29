@@ -110,208 +110,106 @@ body {
 .btn-primary { background:var(--gradient-primary); color:var(--text-light); box-shadow:var(--shadow-md); }
 .btn-secondary { background:transparent; color:var(--text-light); border:2px solid var(--color-primary); }
 
-/* BENEFICIOS */
-.benefits { padding:100px 20px; background:var(--bg-dark-secondary); }
-.section-title { text-align:center; font-size:clamp(2rem,4vw,3rem); margin-bottom:60px; }
-.benefits-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:30px; }
-.benefit-card { background:var(--bg-card); padding:40px 30px; border-radius:12px; text-align:center; border:1px solid rgba(0,212,255,0.1); }
+/* ============================================================
+   SECCIÓN BENEFICIOS - CONTROL DE IMÁGENES Y GRID (CONSOLIDADO)
+   ============================================================ */
+.benefits {
+    padding: 80px 20px;
+    background: var(--bg-dark-secondary);
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 60px;
+}
+
+.benefits-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrado horizontal profesional */
+    transition: transform 0.3s ease;
+}
+
+/* Control del tamaño de las imágenes (Iconos) */
+.benefit-icon {
+    width: 90px;   /* Tamaño resolutivo para desktop */
+    height: 90px;
+    margin: 0 auto 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain; /* Evita deformaciones */
+}
+
+.benefit-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+/* --- TECH BADGES (Consolidado para evitar el desorden anterior) --- */
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    max-width: 980px;
+    margin: 40px auto 0;
+}
+
+.tech-badge {
+    width: 170px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE UNIFICADO --- */
+@media (max-width: 768px) {
+    .benefits-grid-2x2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .benefit-icon {
+        width: 75px; /* Tamaño optimizado para móvil */
+        height: 75px;
+    }
+    .tech-badge {
+        width: 100%;
+        max-width: 320px;
+    }
+}
 
 /* Tecnologías: contenedor (estilos de badges consolidados al final del archivo) */
 .technologies { padding:80px 20px; background:var(--bg-dark); text-align:center; }
 
-/* Testimonios */
-.testimonials { padding:100px 20px; background:var(--bg-dark-secondary); overflow:hidden; }
-.testimonials-slider { position:relative; max-width:1200px; margin:60px auto 0; overflow:hidden; }
-.testimonials-track { display:flex; gap:30px; transition:transform .5s ease-in-out; }
-.testimonial-card { flex:0 0 370px; width:370px; background:var(--bg-card); padding:35px 30px 25px; border-radius:16px; border:1px solid rgba(0,212,255,0.2); display:flex; flex-direction:column; }
 
-/* CTA final, stats, video, footer y demás secciones mantienen estilos originales... */
-
-/* RESPONSIVE & REFINES */
-@media (max-width:768px) {
-  .cta-buttons { flex-direction:column; width:100%; gap:12px; padding:0 12px; }
-  .btn { width:100%; }
-  .benefits-grid-2x2 { grid-template-columns:1fr !important; }
-    /* tech-list and tech-badge responsive rules moved to final overrides */
-  .testimonials-track { gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
-  .testimonial-card { width: min(520px, calc(100% - 48px)); margin:0 auto; }
-}
-
-@media (max-width:420px) {
-    /* mobile-specific adjustments for tech badges are defined in final overrides */
-}
-
-/* Ajustes finales: asegurar que no queden comentarios rotos o duplicados */
-
-
-/* Estrellas */
-.stars {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-}
-
-/* Texto del testimonio */
-.testimonial-text {
-    color: var(--text-gray);
-    font-size: 0.95rem;  /* 🔧 Reducido de 1rem a 0.95rem */
-    line-height: 1.6;  /* 🔧 Reducido de 1.7 a 1.6 */
-    margin-bottom: 20px;  /* 🔧 Reducido de 25px a 20px */
-    flex-grow: 1;
-    position: relative;
-    padding-left: 20px;
-    font-style: italic;
-}
-
-.testimonial-text::before {
-    content: '"';
-    position: absolute;
-    left: 0;
-    top: -10px;
-    font-size: 3rem;
-    color: var(--color-primary);
-    opacity: 0.3;
-    font-family: Georgia, serif;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(0, 212, 255, 0.1);
-}
-
-.author-avatar {
-    flex-shrink: 0;
-}
-
-.author-avatar img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 3px solid var(--color-primary);
-    object-fit: cover;
-}
-
-.author-info h4 {
-    color: var(--text-light);
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.author-info p {
-    color: var(--text-gray);
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* Indicadores del slider */
-.slider-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 26px;  /* 🔧 Aumentado a 80px para mantener separación de las letras */
-    padding-bottom: 20px;  /* 🔧 Padding adicional para más espacio */
-}
-
-.slider-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(0, 212, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.slider-indicator.active {
-    background: var(--color-primary);
-    transform: scale(1.3);
-}
-
-/* ================================
-   TESTIMONIOS - RESPONSIVE
-   ================================ */
-
-/* Tablets */
-@media (max-width: 1024px) {
-    .testimonial-card {
-        flex: 0 0 450px;  /* 🔧 Ancho fijo para 2 cards en tablet */
-        width: 450px;
-    }
-}
-
-/* Móviles */
-@media (max-width: 768px) {
-    .testimonials {
-        padding: 60px 20px;
-    }
-    
-    .testimonials-slider {
-        margin: 40px auto 0;
-        padding: 0;  /* 🔧 Sin padding para evitar mostrar siguiente card */
-    }
-    
-    .testimonials-track {
-        gap: 0;  /* 🔧 Sin gap en móvil para que solo se vea una card */
-    }
-    
-    .testimonial-card {
-        flex: 0 0 100vw;  /* 🔧 Ocupa todo el ancho del viewport */
-        width: 100vw;
-        max-width: 100vw;
-        min-height: auto;
-        max-height: 400px;  /* 🔧 Altura máxima más corta */
-        padding: 30px 40px;  /* 🔧 Más padding lateral */
-    }
-    
-    .testimonial-text {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-    
-    .author-avatar img {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .author-info h4 {
-        font-size: 1rem;
-    }
-    
-    .author-info p {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .testimonials {
-        padding: 50px 15px;
-    }
-    
-    .testimonials-slider {
-        padding: 0;
-    }
-    
-    .testimonial-card {
-        flex: 0 0 100vw;
-        width: 100vw;
-        max-height: 488px;  /* 🔧 Un poco más corto en móviles pequeños */
-        padding: 25px 30px;
-    }
-    
-    .stars {
-        font-size: 1rem;
-        margin-bottom: 15px;
-    }
-    
-    .testimonial-text {
-        font-size: 0.9rem;
-        margin-bottom: 18px;
-    }
-}
 
 /* ================================
    SECCIÓN CTA FINAL
@@ -1721,9 +1619,6 @@ body {
         width: 100%;
     }
     
-    .benefits-grid {
-    }
-    
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -1835,9 +1730,9 @@ body {
     }
     
     .section-title {
-        font-size: clamp(1.3rem, 5vw, 1.8rem);
-        margin-bottom: 40px;
-        padding: 0 10px;
+        font-size: clamp(1.6rem, 5.5vw, 2rem);
+        margin-bottom: 35px;
+        padding: 0 15px;
     }
     
     /* CARDS BENEFICIOS */
@@ -2057,23 +1952,6 @@ body {
     }
 }
 
-/* =========================
-     Beneficios: grid 2x2 y centrar fila inferior
-     ========================= */
-.benefits-grid-2x2 {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    align-items: start;
-}
-
-/* Si el número de cards es impar, hacer que el último ocupe 2 columnas y quede centrado */
-.benefits-grid-2x2 > .benefit-card:nth-last-child(1):nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    max-width: 720px; /* opcional: limita ancho de la card centrada */
-}
-
 /* Móvil: pasar a una sola columna */
 @media (max-width: 767px) {
     .benefits-grid-2x2 {
@@ -2216,60 +2094,4 @@ body {
 @media (max-width: 480px) {
     .stat-item { min-height: 110px; padding: 18px 12px; }
 }
-
-
-
-/* ================================
-     Overrides finales: imágenes y comportamiento consistente de tech-badges
-     Este bloque está al final para sobreescribir reglas duplicadas anteriores
-     ================================ */
-
-/* Imágenes: comportamiento predecible y restauración de espacios */
-img { max-width:100%; height:auto; display:block; }
-
-/* Avatares y iconos (se mantienen con cover para recorte correcto) */
-.author-avatar img, .benefit-icon-img img, .footer-logo img { object-fit: cover; max-width:100%; height:auto; display:block; }
-
-/* Consolidación definitiva de las tech badges
-     - ancho/alto fijos en escritorio para equilibrio visual
-     - el contenedor usa flex-wrap y centra cada fila, por lo que la segunda fila queda centrada
-     - en móvil las badges pasan a ancho completo
-*/
-.tech-list {
-        display:flex !important;
-        flex-wrap:wrap !important;
-        justify-content:center !important; /* centra cada fila */
-        gap:18px !important;
-        max-width:980px !important; /* controla número de items por fila en escritorio */
-        margin:40px auto 0 !important;
-        padding:0 16px !important;
-}
-.tech-badge {
-        width:170px !important;
-        height:56px !important;
-        padding:0 18px !important;
-        display:flex !important;
-        align-items:center !important;
-        justify-content:center !important;
-        text-align:center !important;
-        white-space:nowrap !important;
-        overflow:hidden !important;
-        text-overflow:ellipsis !important;
-        border-radius:12px !important;
-}
-
-@media (max-width: 1024px) {
-    .tech-badge { width:150px !important; height:52px !important; font-size:0.92rem !important; }
-    .tech-list { max-width:820px !important; }
-}
-
-@media (max-width: 768px) {
-    .tech-list { gap:12px !important; padding:0 12px !important; }
-    .tech-badge { width:100% !important; max-width:680px !important; height:52px !important; padding:0 16px !important; border-radius:10px !important; }
-}
-
-@media (max-width:420px) {
-    .tech-badge { height:48px !important; font-size:0.94rem !important; padding:0 12px !important; }
-}
-
 

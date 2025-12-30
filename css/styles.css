@@ -3,49 +3,6 @@
    Estilos CSS - Responsive Design
    ================================ */
 
-/* VARIABLES DE COLORES */
-:root {
-    /* Colores principales */
-    --color-primary: #00D4FF;      /* Cyan */
-    --color-secondary: #9D4EDD;    /* Morado */
-    --color-accent: #FF5C35;       /* Coral/Naranja */
-    --color-pink: #FF006E;         /* Rosa */
-    
-    /* Fondos */
-    --bg-dark: #252B4A;              
-    --bg-dark-secondary: #303656;    
-    --bg-card: #3A4162;
-    
-    /* Textos */
-    --text-light: #FFFFFF;
-    --text-gray: #B8BDD0;
-    --text-dark: #0A0E27;
-    
-    /* Sombras */
-    --shadow-sm: 0 2px 8px rgba(0, 212, 255, 0.1);
-    --shadow-md: 0 4px 16px rgba(0, 212, 255, 0.2);
-    --shadow-lg: 0 8px 32px rgba(0, 212, 255, 0.3);
-    
-    /* Gradientes */
-    --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-pink));
-}
-
-/* RESET Y ESTILOS BASE */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
 /* CONTENEDOR GENERAL */
 .container {
     max-width: 1200px;
@@ -99,8 +56,14 @@ body {
 .hero-overlay { position: absolute; inset: 0; background: rgba(4,10,46,0.70); z-index:1; }
 .hero-content { position: relative; z-index:2; }
 
-.hero-title { font-size: clamp(2rem, 5vw, 4rem); font-weight:700; margin-bottom:20px; line-height:1.2; }
-.highlight { background: var(--gradient-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.hero-title {font-size: clamp(2rem, 5vw, 4rem); font-weight:700; margin-bottom:20px; line-height:1.2; }
+.highlight {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
 .hero-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.5rem); color:var(--text-gray); margin-bottom:15px; }
 .hero-tagline { font-size: clamp(1rem, 2vw, 1.2rem); color:var(--color-primary); font-weight:500; margin-bottom:40px; }
 
@@ -210,293 +173,22 @@ body {
 .technologies { padding:80px 20px; background:var(--bg-dark); text-align:center; }
 
 
-
-/* ================================
-   SECCIÓN CTA FINAL
-   ================================ */
-.cta-final {
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #FF5C35 0%, #FF8A65 40%, #9D4EDD 70%, #00D4FF 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.cta-final::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10, 14, 39, 0.50); /* 0.50 para más naranja visible */
-    z-index: 1;
-}
-
-.cta-final .container {
-    position: relative;
-    z-index: 2;
-}
-
-.cta-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.cta-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
-    color: var(--text-light);
-    margin-bottom: 25px;
-    line-height: 1.2;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.cta-subtitle {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: var(--text-gray);
-    margin-bottom: 50px;
-    line-height: 1.6;
-}
-
-/* Beneficios mini iconos */
-.cta-benefits {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
-}
-
-.cta-benefit-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.benefit-icon {
-    font-size: 1.8rem;
-    filter: drop-shadow(0 0 10px rgba(255, 92, 53, 0.5));
-}
-
-.benefit-text {
-    color: var(--text-light);
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-/* ================================
-   SECCIÓN ESTADÍSTICAS
-   ================================ */
-.stats {
-    padding: 80px 20px;
-    /* Lines 713-715 omitted */
-}
-
-.stats-title {/* Lines 718-726 omitted */}
-
-.stats-grid {/* Lines 729-734 omitted */}
-
-.stat-item {/* Lines 737-743 omitted */}
-
-.stat-item:hover {/* Lines 746-750 omitted */}
-
-.stat-number {/* Lines 753-761 omitted */}
-
-.stat-label {/* Lines 764-769 omitted */}
-
-/* Responsive */
-@media (max-width: 1024px) {/* Lines 773-777 omitted */}
-
-@media (max-width: 768px) {/* Lines 780-800 omitted */}
-
-@media (max-width: 480px) {/* Lines 803-814 omitted */}
-
-/* Botones CTA Final */
-.cta-buttons-final {/* Lines 818-823 omitted */}
-
-.btn-large {/* Lines 826-830 omitted */}
-
-.btn-secondary-outline {/* Lines 833-836 omitted */}
-
-.btn-secondary-outline:hover {/* Lines 839-843 omitted */}
-
-/* ================================*/
-   /* Lines 846-847 omitted */
-   /* ================================ */
-.cta-final {/* Lines 849-853 omitted */}
-
-.cta-final::before {/* Lines 856-864 omitted */}
-
-.cta-final .container {/* Lines 867-869 omitted */}
-
-.cta-content {/* Lines 872-875 omitted */}
-
-.cta-title {/* Lines 878-887 omitted */}
-
-.cta-subtitle {/* Lines 890-894 omitted */}
-
-/* Beneficios con imágenes */
-.cta-benefits {/* Lines 898-903 omitted */}
-
-.cta-benefit-item {/* Lines 906-911 omitted */}
-
-.benefit-icon-img {/* Lines 914-924 omitted */}
-
-.benefit-icon-img:hover {/* Lines 927-931 omitted */}
-
-.benefit-icon-img img {/* Lines 934-937 omitted */}
-
-.benefit-text {/* Lines 940-945 omitted */}
-
-/* Botones CTA Final */
-.cta-buttons-final {/* Lines 949-954 omitted */}
-
-.btn-large {/* Lines 957-961 omitted */}
-
-.btn-secondary-outline {/* Lines 964-967 omitted */}
-
-.btn-secondary-outline:hover {/* Lines 970-975 omitted */}
-
-/* ================================*/
-   /* Lines 978-980 omitted */
-
-@media (max-width: 768px) {/* Lines 982-1026 omitted */}
-
-@media (max-width: 480px) {/* Lines 1029-1055 omitted */}
-
-/* ================================*/
-   /* Lines 1058-1059 omitted */
-   /* ================================ */
-.video-section {/* Lines 1061-1064 omitted */}
-
-.video-content {/* Lines 1067-1072 omitted */}
-
-/* Texto a la izquierda (40%) */
-.video-text {/* Lines 1076-1077 omitted */}
-
-.video-title {/* Lines 1080-1085 omitted */}
-
-.video-description {/* Lines 1088-1091 omitted */}
-
-/* Video a la derecha (60%) */
-.video-container {/* Lines 1095-1097 omitted */}
-
-.video-container video {/* Lines 1100-1107 omitted */}
-
-.video-container video:hover {/* Lines 1110-1113 omitted */}
-
-/* ================================ Lines 1116-1118 omitted */
-
-@media (max-width: 768px) {/* Lines 1120-1146 omitted */}
-
-@media (max-width: 480px) {/* Lines 1149-1164 omitted */}
-
-/* ================================ Lines 1167-1168 omitted */
-.footer {/* Lines 1170-1173 omitted */}
-
-.footer-content {/* Lines 1176-1182 omitted */}
-
-.footer-logo {/* Lines 1185-1186 omitted */}
-
-.footer-logo img {/* Lines 1189-1193 omitted */}
-
-.footer-logo img:hover {/* Lines 1196-1197 omitted */}
-
-.footer-social {/* Lines 1200-1202 omitted */}
-
-.social-link {/* Lines 1205-1207 omitted */}
-
-.social-link img {/* Lines 1210-1215 omitted */}
-
-.social-link:hover img {/* Lines 1218-1221 omitted */}
-
-.footer-bottom {/* Lines 1224-1229 omitted */}
-
-.footer-bottom .brand-name {/* Lines 1232-1234 omitted */}
-
-/*==============================*/
-/* 1237-1238 omitted */
-/* ==============================*/
-
-.modal {/* Lines 1240-1250 omitted */}
-
-.modal-content {/* Lines 1253-1263 omitted */}
-
-/* BLOQUE NUEVO POR CAMBIO h2 a <p>*/
-.modal-title {/* Lines 1267-1272 omitted */}
-
-.modal-body {/* Lines 1275-1276 omitted */}
-
-.modal-body h2 {/* Lines 1279-1282 omitted */}
-
-.modal-description {/* Lines 1285-1288 omitted */}
-
-.close {/* Lines 1291-1298 omitted */}
+/* Beneficios con imágenes y notas limpiadas (comentarios innecesarios eliminados) */
 
 .close:hover,
-.close:focus {/* Lines 1302-1303 omitted */}
-
 /* ================================
-   Lines 1306-1307 omitted
 ================================ */
-.scroll-to-top {/* Lines 1309-1326 omitted */}
-
-.scroll-to-top.show {/* Lines 1329-1331 omitted */}
-
-.scroll-to-top:hover {/* Lines 1334-1337 omitted */}
-
-.scroll-to-top .arrow-up {/* Lines 1340-1347 omitted */}
-
-@media (max-width: 768px) {/* Lines 1350-1361 omitted */}
-
 /* FORMULARIOS */
-.form-group {/* Lines 1365-1366 omitted */}
-
-.form-group label {/* Lines 1369-1373 omitted */}
-
-.form-group input {/* Lines 1376-1384 omitted */}
-
-.form-group input:focus {/* Lines 1387-1390 omitted */}
-
-.form-group input::placeholder {/* Lines 1393-1394 omitted */}
-
-.error-message {/* Lines 1397-1402 omitted */}
-
 /* MENSAJE DE ÉXITO */
-.modal-success {/* Lines 1406-1407 omitted */}
-
-.success-icon {/* Lines 1410-1421 omitted */}
-
 /* ================================
-    Lines 1424-1425 omitted 
  ================================ */
-@keyframes fadeIn {/* Lines 1427-1429 omitted */}
-
-@keyframes fadeInUp {/* Lines 1432-1440 omitted */}
-
-@keyframes slideDown {/* Lines 1443-1451 omitted */}
-
-@keyframes scaleIn {/* Lines 1454-1460 omitted */}
-
 /* ================================
-   Lines 1463-1465 omitted
 ================================ */
 
 /* ANCHO MÍNIMO DE LA WEB - Evita que se rompa en pantallas muy pequeñas */
-body {/* Lines 1468-1469 omitted */}
-
 /* Tablets y pantallas medianas */
-@media (max-width: 768px) {/* Lines 1473-1504 omitted */}
-
 /* MÓVILES - Responsive desde 280px hacia arriba */
-@media (max-width: 480px) {/* Lines 1508-1725 omitted */}
-
 /* 📱 MÓVILES PEQUEÑOS - Ajustes finales */
-@media (max-width: 360px) {/* Lines 1729-1762 omitted */}
 /* ================================
    NEXUS LEARNING - LANDING PAGE
    Estilos CSS - Responsive Design
@@ -763,82 +455,6 @@ body {
     }
 }
 
-/* ================================
-   SECCIÓN CTA FINAL
-   ================================ */
-.cta-final {
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #FF5C35 0%, #FF8A65 40%, #9D4EDD 70%, #00D4FF 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.cta-final::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10, 14, 39, 0.50); /* 0.50 para más naranja visible */
-    z-index: 1;
-}
-
-.cta-final .container {
-    position: relative;
-    z-index: 2;
-}
-
-.cta-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.cta-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
-    color: var(--text-light);
-    margin-bottom: 25px;
-    line-height: 1.2;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.cta-subtitle {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: var(--text-gray);
-    margin-bottom: 50px;
-    line-height: 1.6;
-}
-
-/* Beneficios mini iconos */
-.cta-benefits {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
-}
-
-.cta-benefit-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.benefit-icon {
-    font-size: 1.8rem;
-    filter: drop-shadow(0 0 10px rgba(255, 92, 53, 0.5));
-}
-
-.benefit-text {
-    color: var(--text-light);
-    font-size: 1rem;
-    font-weight: 500;
-}
 
 /* ================================
    SECCIÓN ESTADÍSTICAS
@@ -858,6 +474,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
 }
 
 .stats-grid {
@@ -893,6 +510,7 @@ body {
     background-clip: text;
     margin-bottom: 10px;
     line-height: 1;
+    color: transparent;
 }
 
 .stat-label {
@@ -1019,6 +637,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
 }
 
 .cta-subtitle {
@@ -1187,185 +806,6 @@ body {
         padding: 16px 30px;
         font-size: 1rem;
     }
-}
-
-/* ================================
-   SECCIÓN VIDEO EXPLICATIVO
-   ================================ */
-.video-section {
-    padding: 100px 20px;
-    background: linear-gradient(180deg, var(--bg-dark-secondary) 0%, #272d57 100%);
-    border-top: 1px solid rgba(0, 212, 255, 0.1);
-}
-
-.video-content {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Texto a la izquierda (40%) */
-.video-text {
-    flex: 0 0 40%;
-}
-
-.video-title {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 600;
-    color: var(--text-light);
-    margin-bottom: 20px;
-    line-height: 1.3;
-}
-
-.video-description {
-    font-size: 1.2rem;
-    color: var(--text-gray);
-    line-height: 1.7;
-}
-
-/* Video a la derecha (60%) */
-.video-container {
-    flex: 0 0 60%;
-    position: relative;
-}
-
-.video-container video {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    border: 2px solid rgba(0, 212, 255, 0.3);
-    box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
-    background: #000;
-    transition: all 0.3s ease;
-}
-
-.video-container video:hover {
-    border-color: var(--color-primary);
-    box-shadow: 0 15px 50px rgba(0, 212, 255, 0.4);
-    transform: scale(1.02);
-}
-
-/* ================================
-   VIDEO SECCIÓN - RESPONSIVE
-   ================================ */
-
-@media (max-width: 768px) {
-    .video-section {
-        padding: 60px 20px;
-    }
-    
-    .video-content {
-        flex-direction: column-reverse;  /* Video arriba, texto abajo */
-        gap: 40px;
-    }
-    
-    .video-text {
-        flex: 1;
-        text-align: center;
-    }
-    
-    .video-container {
-        flex: 1;
-        width: 100%;
-    }
-    
-    .video-title {
-        font-size: 1.8rem;
-    }
-    
-    .video-description {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .video-section {
-        padding: 50px 15px;
-    }
-    
-    .video-content {
-        gap: 30px;
-    }
-    
-    .video-title {
-        font-size: 1.6rem;
-    }
-    
-    .video-description {
-        font-size: 1rem;
-    }
-}
-
-/* ================================
-   FOOTER
-   ================================ */
-.footer {
-    background: var(--bg-dark-secondary);
-    padding: 60px 20px 30px;
-    border-top: 1px solid rgba(0, 212, 255, 0.1);
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.footer-logo {
-    flex-shrink: 0;
-}
-
-.footer-logo img {
-    height: 60px;
-    width: auto;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-
-.footer-logo img:hover {
-    opacity: 1;
-}
-
-.footer-social {
-    display: flex;
-    gap: 20px;
-}
-
-.social-link {
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.social-link img {
-    width: 32px;
-    height: 32px;
-    opacity: 0.6;
-    transition: all 0.3s ease;
-    filter: grayscale(20%);
-}
-
-.social-link:hover img {
-    opacity: 1;
-    filter: grayscale(0%);
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-gray);
-    font-size: 0.9rem;
-}
-
-.footer-bottom .brand-name {
-    color: #00D4FF;
-    font-weight: 500;
 }
 
 /* ================================

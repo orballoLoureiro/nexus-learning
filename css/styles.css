@@ -17,8 +17,11 @@
     background-color: rgba(10, 14, 39, 0.95);
     backdrop-filter: blur(10px);
     padding: 5px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000;
     box-shadow: var(--shadow-sm);
 }
@@ -27,12 +30,30 @@
     display: flex;
     justify-content: normal;
     align-items: center;  /* centrar verticalmente */
-    min-height: 76px;     /* para dar altura al header */
+    min-height: var(--header-height);
 }
 
 .logo img {
     height: 90px;
     width: auto;
+}
+
+/* Header height variable and safe-area handling */
+:root {
+    --header-height: 76px; /* ajustar según diseño */
+}
+
+/* Reserve space so content is not hidden under fixed header */
+body {
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top));
+}
+
+/* Responsive header heights */
+@media (max-width: 480px) {
+    :root { --header-height: 70px; }
+}
+@media (max-width: 360px) {
+    :root { --header-height: 64px; }
 }
 
 /* ================================
@@ -104,7 +125,6 @@
     display: flex;
     flex-direction: column;
     align-items: center; /* Centrado horizontal profesional */
-    transition: transform 0.3s ease;
 }
 
 /* Control del tamaño de las imágenes (Iconos) */
@@ -562,7 +582,7 @@ body {
     }
     
     .stat-number {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -1316,7 +1336,7 @@ body {
     }
     
     .container {
-        padding: 0 15px;
+        padding: 0 10px; /* ← CAMBIADO de 15px a 10px */
     }
     
     .benefits,
@@ -1327,6 +1347,29 @@ body {
     .benefit-card {
         padding: 25px 15px;
     }
+    
+    /* ← AÑADIR ESTAS LÍNEAS NUEVAS */
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 15px 5px;
+    }
+
+    .stat-item {
+        padding: 12px 8px;
+        min-width: 0;
+    }
+
+    .stat-item h3 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .stat-item p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+    /* FIN DE LÍNEAS NUEVAS */
     
     .footer {
         padding: 35px 15px 18px;

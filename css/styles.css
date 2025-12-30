@@ -255,12 +255,6 @@ body {
     overflow: hidden;
 }
 
-.testimonials-track {
-    display: flex;
-    gap: 30px;
-    transition: transform 0.5s ease-in-out;
-    width: max-content; /* 🔧 AGREGADO: Permite que el track se expanda según contenido */
-}
 
 /* CARD DE TESTIMONIO */
 .testimonial-card {
@@ -305,7 +299,6 @@ body {
 }
 
 .testimonial-text::before {
-    content: '"';
     position: absolute;
     left: 0;
     top: -10px;

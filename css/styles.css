@@ -1302,14 +1302,16 @@ body {
         flex-wrap: wrap;
     }
     
-    .footer-logo img {
+
+    /* --- REGLA ULTRAESPECÍFICA PARA EL LOGO DEL FOOTER --- */
+    footer .footer-logo img {
         height: 24px !important;
         max-width: 100px !important;
         width: auto !important;
-        display: block;
+        display: block !important;
         margin-left: 0 !important;
         margin-right: auto !important;
-        object-fit: contain;
+        object-fit: contain !important;
         padding: 0 !important;
         box-shadow: none !important;
     }

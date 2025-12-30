@@ -1535,3 +1535,45 @@ body {
     .stat-item { min-height: 110px; padding: 18px 12px; }
 }
 
+/* ------------------------------------------------------------------
+     Optional (commented) alternative: testimonials fix (non-invasive)
+     - Esta sección está comentada. Quitar los /* ... *\/ para activar.
+     - Sirve como parche no destructivo si vuelven los recortes en móvil.
+------------------------------------------------------------------ */
+/*
+/* Fix testimonios - centrado y visible en móviles */
+html, body { overflow-x: hidden; }
+
+.testimonials-track {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 0 12px; /* espacio lateral sin usar 100vw */
+    box-sizing: border-box;
+}
+
+.testimonials-track .testimonial-card {
+    flex: 0 0 auto;                     /* evita que ocupe 100vw */
+    width: min(520px, calc(100% - 48px));/* adaptable y con margen */
+    max-width: 520px;
+    box-sizing: border-box;
+    scroll-snap-align: center;          /* centra al hacer snap */
+    margin: 0;
+    min-height: auto;                   /* eliminar alturas fijas que recortan */
+    max-height: none;
+}
+
+@media (max-width: 480px) {
+    .testimonials-track { gap: 14px; padding: 0 10px; }
+    .testimonials-track .testimonial-card {
+        width: calc(100% - 28px); /* ocupa casi todo el ancho con padding */
+        max-width: 420px;
+        padding: 18px;            /* reduce padding si hacía overflow */
+    }
+}
+*/
+

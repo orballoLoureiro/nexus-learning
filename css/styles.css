@@ -1,3 +1,13 @@
+@media (max-width: 480px) {
+    :root {
+        --header-height: 56px;
+    }
+}
+@media (max-width: 360px) {
+    :root {
+        --header-height: 48px;
+    }
+}
 /* ================================
    NEXUS LEARNING - LANDING PAGE
    Estilos CSS - Responsive Design

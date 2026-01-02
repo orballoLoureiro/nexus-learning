@@ -9,13 +9,15 @@ nexus-landing/
 ├── css/
 │   └── styles.css     # Estilos CSS
 ├── js/
-│   └── main.js        # JavaScript (modales y validaciones)
+│   ├── main.js        # JavaScript (modales y validaciones)
+│   └── tracking.js    # Google Analytics y tracking
 ├── images/            # Carpeta para tus imágenes
 │   ├── logotipo-nexus-learning-0.png
 │   ├── imagen_principal.jpg
 │   ├── Adobe_Express_-_file__1_.png
 │   ├── Adobe_Express_-_file__2_.png
 │   └── Adobe_Express_-_file__3_.png
+├── videos/            # Vídeos explicativos
 └── README.md          # Este archivo
 ```
 
@@ -28,6 +30,8 @@ nexus-landing/
 ✅ **Animaciones suaves** - Transiciones y efectos  
 ✅ **Código comentado** - Fácil de entender y modificar  
 ✅ **Preparado para Make** - Webhooks listos para conectar  
+✅ **Google Analytics** - Tracking completo de eventos y conversiones  
+✅ **Footer optimizado** - Diseño centrado y efectos visuales  
 
 ---
 
@@ -46,7 +50,7 @@ nexus-landing/
 3. Coloca cada archivo en su carpeta correspondiente:
    - `index.html` → raíz de `nexus-landing/`
    - `styles.css` → dentro de `css/`
-   - `main.js` → dentro de `js/`
+   - `main.js` y `tracking.js` → dentro de `js/`
    - `README.md` → raíz de `nexus-landing/`
 
 ### **PASO 2: Añadir tus imágenes**

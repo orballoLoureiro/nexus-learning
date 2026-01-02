@@ -1055,6 +1055,66 @@ body {
 }
 
 /* ================================
+   FOOTER - ESTILOS GLOBALES
+   ================================ */
+.footer {
+    background: #181c2f;
+    position: relative;
+    padding: 60px 20px 20px;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+}
+
+.footer > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-left: 0;
+}
+
+.footer-social img {
+    opacity: 0.7;
+    filter: brightness(0.9);
+    transition: all 0.3s ease;
+}
+
+.footer-social img:hover {
+    opacity: 1;
+    filter: brightness(1);
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.brand-name {
+    color: var(--color-primary);
+}
+
+/* ================================
    RESPONSIVE DESIGN
    ================================ */
 
@@ -1081,7 +1141,14 @@ body {
     
     .footer-content {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+    }
+    
+    .footer-social {
+        margin-left: 0;
+        justify-content: center;
+        width: 100%;
     }
 
       /* 📌 GRID 2x2 en móvil - 1 columna */
@@ -1290,35 +1357,6 @@ body {
     /* FOOTER */
     .footer {
         padding: 40px 20px 20px;
-        background: #111a44;
-    }
-    
-    .footer-content {
-        gap: 20px;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-    
-
-    /* --- REGLA ULTRAESPECÍFICA PARA EL LOGO DEL FOOTER --- */
-    footer .footer-logo img {
-        height: 24px !important;
-        max-width: 100px !important;
-        width: auto !important;
-        display: block !important;
-        margin-left: 0 !important;
-        margin-right: auto !important;
-        object-fit: contain !important;
-        padding: 0 !important;
-        box-shadow: none !important;
-    }
-    
-    .footer-social {
-        gap: 15px;
-        flex-wrap: wrap;
     }
     
     .social-link {
@@ -1606,7 +1644,7 @@ body {
     flex: 0 1 40%;
     min-width: 260px;
     max-width: 480px;
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1623,6 +1661,7 @@ body {
 .video-description {
     font-size: 1.05rem;
     color: var(--text-gray);
+    text-align: center;
 }
 
 .video-container {
@@ -1691,3 +1730,20 @@ body {
     .stat-item { min-height: 110px; padding: 18px 12px; }
 }
 
+/* ================================
+   REGLA GLOBAL PARA LOGO DEL FOOTER
+   Alineado a la izquierda en todos los dispositivos
+   ================================ */
+footer .footer-logo img {
+    height: 34px !important;
+    max-width: 100px !important;
+    width: auto !important;
+    display: block !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    object-fit: contain !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    opacity: 0.70;
+    filter: brightness(0.9);
+}

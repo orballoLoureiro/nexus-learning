@@ -4,8 +4,8 @@
 (function() {
     'use strict';
     
-    //const WEBHOOK_URL = 'https://hook.eu2.make.com/iwygfknmc0u4o2zy764cyuw8crxp8wtx';
-    const WEBHOOK_URL = 'https://primary-production-62b8.up.railway.app/webhook/b593e252-45c6-41e6-8b1e-47546819acab';
+    //const WEBHOOK_URL = 'https://your-webhook-url.com/track';
+    const WEBHOOK_URL = 'https://hook.eu2.make.com/glt1ml9811j3d1pbvjjlfceves8l4auj';
     const CONSENT_KEY = '_tracking_consent';
     const ANON_ID_KEY = '_anon_id';
     const USER_ID_KEY = '_user_id';

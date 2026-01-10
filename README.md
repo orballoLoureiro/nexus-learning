@@ -63,12 +63,9 @@ nexus-learning/
 - **HTML5** - Estructura semántica
 - **CSS3** - Estilos personalizados con variables CSS y flexbox/grid
 - **JavaScript ES6+** - Lógica de modales y validaciones
-- **Google Analytics 4** - Analítica web avanzada
 - **Git/GitHub** - Control de versiones  
 
 ---
-
-## 🚀 Instalación y Configuración
 
 ### **PASO 1: Clonar el repositorio**
 
@@ -77,45 +74,6 @@ git clone https://github.com/orballoLoureiro/nexus-learning.git
 cd nexus-learning
 ```
 
-### **PASO 2: Probar en local**
-### **PASO 2: Probar en local**
-
-Simplemente abre [index.html](index.html) en tu navegador web favorito, o usa una de las siguientes opciones:
-
-#### **Opción A: Con Laragon (Recomendado)**
-
-1. Copia la carpeta completa `nexus-learning/` a: `C:\laragon\www\`
-2. Abre Laragon y haz clic en **"Start All"**
-3. Abre tu navegador y ve a: `http://localhost/nexus-learning`
-
-#### **Opción B: Con Visual Studio Code + Live Server**
-
-1. Abre VS Code
-2. Arrastra la carpeta `nexus-learning/` a VS Code
-3. Instala la extensión **"Live Server"** (si no la tienes)
-4. Clic derecho en [index.html](index.html) → **"Open with Live Server"**
-
----
-
-### **PASO 3: Configurar Google Analytics (Opcional)**
-
-1. Edita [js/tracking.js](js/tracking.js)
-2. Reemplaza `G-XXXXXXXXXX` con tu ID de Google Analytics
-3. Guarda los cambios
-
----
-
-### **PASO 4: Conectar con Make (Opcional)**
-
-Para conectar los formularios con Make.com:
-
-1. En Make, crea un nuevo escenario
-2. Agrega un módulo **"Webhook" → "Custom Webhook"**
-3. Copia la URL del webhook
-4. Edita [js/main.js](js/main.js) en las líneas comentadas (líneas 78 y 116)
-5. Descomenta y añade tu URL de webhook
-
----
 
 ## 📊 Archivos Subidos a GitHub
 
@@ -162,85 +120,18 @@ Para conectar los formularios con Make.com:
 1. Abre DevTools (F12) → pestaña **Console**
 2. Completa un formulario
 3. Deberías ver en consola:
-```
-   Datos Guía: {email: "test@test.com", tipo: "guia"}
-```
-   o
-```
-   Datos Comunidad: {nombre: "Roberto", email: "test@test.com", tipo: "comunidad"}
-```
 
----
 
 ## 🔗 Conectar con Make (Webhook)
-
-### **Cuando estés listo para conectar con Make:**
 
 1. **En Make**, crea un nuevo escenario
 2. Agrega un módulo **"Webhook" → "Custom Webhook"**
 3. Copia la URL del webhook que te genera Make
 4. **Edita el archivo** `js/main.js`
 
-**LÍNEA 78** (para el formulario Guía):
-```javascript
-// 🔗 DESCOMENTA ESTAS LÍNEAS Y AÑADE TU WEBHOOK:
-fetch('https://hook.eu2.make.com/tu-webhook-guia', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData)
-})
-.then(response => response.json())
-.then(data => {
-    console.log('Éxito:', data);
-})
-.catch((error) => {
-    console.error('Error:', error);
-});
-```
-
-**LÍNEA 116** (para el formulario Comunidad):
-```javascript
-// 🔗 DESCOMENTA ESTAS LÍNEAS Y AÑADE TU WEBHOOK:
-fetch('https://hook.eu2.make.com/tu-webhook-comunidad', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData)
-})
-.then(response => response.json())
-.then(data => {
-    console.log('Éxito:', data);
-})
-.catch((error) => {
-    console.error('Error:', error);
-});
-```
-
-5. **Guarda los cambios** y prueba de nuevo
-6. En Make verás llegar los datos en tiempo real
-
 ---
 
 ## 🌐 Despliegue en Producción
-
-### **Opción 1: Netlify (Recomendado - Más fácil)**
-
-1. Ve a: **https://www.netlify.com**
-2. Crea cuenta gratuita
-3. Conecta tu repositorio de GitHub o arrastra la carpeta
-4. ¡Listo! Te dará una URL tipo: `https://tu-sitio.netlify.app`
-5. **SSL automático** y **dominio personalizado** disponible
-
-### **Opción 2: Vercel**
-
-1. Ve a: **https://vercel.com**
-2. Crea cuenta gratuita con GitHub
-3. Importa el repositorio `nexus-learning`
-4. Deploy automático en cada push
-5. URL: `https://nexus-learning.vercel.app`
 
 ### **Opción 3: GitHub Pages**
 
@@ -248,14 +139,6 @@ fetch('https://hook.eu2.make.com/tu-webhook-comunidad', {
 2. Selecciona la rama `main` y carpeta raíz `/`
 3. Guarda y espera unos minutos
 4. Tu sitio estará en: `https://orballoLoureiro.github.io/nexus-learning`
-
-### **Opción 4: Render**
-
-1. Ve a: **https://render.com**
-2. Crea cuenta gratuita
-3. **New** → **Static Site**
-4. Conecta tu repositorio de GitHub
-5. Deploy automático
 
 ---
 
@@ -300,43 +183,9 @@ Edita [index.html](index.html) en la sección del footer:
 
 ---
 
-## 🐛 Solución de Problemas
-
-### **Problema: Las imágenes no se ven**
-✅ **Solución**: 
-- Verifica que los archivos están en la carpeta [images/](images/)
-- Los nombres de archivo son sensibles a mayúsculas/minúsculas
-- Limpia caché del navegador (Ctrl + Shift + R)
-
-### **Problema: Los modales no se abren**
-✅ **Solución**: 
-- Abre DevTools (F12) → pestaña Console
-- Busca errores en rojo
-- Verifica que [js/main.js](js/main.js) esté correctamente enlazado
-
-### **Problema: Validaciones no funcionan**
-✅ **Solución**: 
-- Verifica que [js/main.js](js/main.js) esté cargado
-- Revisa la consola del navegador por errores
-- Asegúrate de que los IDs de los formularios coinciden
-
-### **Problema: El diseño se ve roto en móvil**
-✅ **Solución**: 
-- Limpia caché del navegador (Ctrl + Shift + R)
-- Verifica que [css/styles.css](css/styles.css) esté enlazado correctamente
-- Revisa las media queries en el CSS
-
-### **Problema: El vídeo no se reproduce**
-✅ **Solución**:
-- Verifica que el archivo está en [videos/](videos/)
-- Algunos navegadores bloquean autoplay con sonido
-- Prueba en otro navegador
-
----
-
 ## 📞 Información del Proyecto
 
-**Autor**: Roberto Ballo Loureiro  
+**Autor**: Rocío Loureiro Sousa
 **Repositorio**: [github.com/orballoLoureiro/nexus-learning](https://github.com/orballoLoureiro/nexus-learning)  
 **Última actualización**: 10 de Enero de 2026  
 **Versión**: 1.0 - Finalizado  
@@ -406,10 +255,6 @@ Este proyecto es para uso educativo y del curso de Automatización & IA en Marke
 Proyecto desarrollado como parte del ejercicio práctico de **Automatización & IA en Marketing Digital**.
 
 ---
-
-**🚀 ¡Proyecto finalizado y listo para producción!**
-
-Si necesitas realizar cambios en el futuro, toda la estructura está preparada para ser fácilmente modificable y escalable.
 
 **📊 Estadísticas del Proyecto:**
 - Archivos totales: 26

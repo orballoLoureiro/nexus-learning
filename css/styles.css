@@ -736,7 +736,7 @@ body {
 
 .btn-secondary-outline {
     background: transparent;
-    border: 2px solid var(--color-accent);
+    border: 5px solid var(--color-accent);
     color: var(--text-light);
 }
 

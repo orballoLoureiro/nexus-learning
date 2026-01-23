@@ -665,7 +665,7 @@ let data = {};
 
 // Configurar datos base de la conversión
 data.type = 'lead';
-data.value = 500;
+data.value = 1200;
 
 // Generar orderId único con timestamp + número aleatorio
 data.orderId = `${Date.now()}-${Math.floor(Math.random() * 10000)}`;

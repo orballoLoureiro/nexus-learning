@@ -93,6 +93,14 @@ body {
 .btn { padding:16px 32px; font-size:1.1rem; font-weight:600; border:none; border-radius:8px; cursor:pointer; display:inline-block; }
 .btn-primary { background:var(--gradient-primary); color:var(--text-light); box-shadow:var(--shadow-md); }
 .btn-secondary { background:transparent; color:var(--text-light); border:5px solid var(--color-primary); }
+/* Esto afectará a TODOS los tamaños (PC, Tablet y Móvil) */
+.btn-secondary:hover, 
+.btn-secondary:active { /* :active es para cuando tocan el botón en móvil */
+    background: var(--color-primary) !important;
+    color: var(--bg-dark) !important;
+    border-color: var(--color-primary) !important;
+    transform: translateY(-3px);
+}
 
 /* ============================================================
    SECCIÓN BENEFICIOS - CONTROL DE IMÁGENES Y GRID (CONSOLIDADO)
@@ -681,7 +689,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    max-width: 200px;
+    max-width: 250px;
 }
 
 .benefit-icon-img {

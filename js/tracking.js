@@ -695,7 +695,14 @@ const buttons = document.querySelectorAll('button[type="submit"]');
 // Encontrar el botón específico que contiene "Descargar Guía"
 let downloadButton = null;
 buttons.forEach(button => {
-  if (button.textContent.includes('Descargar Guía')) {
+  const buttonText = button.textContent.trim();
+    const hasConversionClass = button.classList.contains('btnConversion');
+    const isDownloadGuide = buttonText.includes('Descargar Guía');
+    const isJoinNow = buttonText.includes('Unirme Ahora');
+  /*if (button.textContent.includes('Descargar Guía')||button.textContent.includes('Unirme Ahora')) {
+    downloadButton = button;
+  }*/
+  if (hasConversionClass || isDownloadGuide || isJoinNow) {
     downloadButton = button;
   }
 });
